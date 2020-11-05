@@ -1,4 +1,5 @@
 import React from 'react';
+
 import './People.css';
 import Icon from '../../icons/uncknown.jpg';
 import Search from '../../icons/search.png';
@@ -6,6 +7,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {smsSelector, userByNameSelector} from "../../store/selectors";
 import {SearchtUserAction, selectUserAction} from "../../actions/actions";
 import {initialState} from "../../store";
+import {User} from "../user/User";
 
 export const People = () => {
     const {users: initialUsers} = initialState;
@@ -59,7 +61,12 @@ export const People = () => {
                        onInput={(event) => search(event)}/>
             </div>
             <div className='chats'>Chats</div>
-            <div className='usersBox'>{render()}</div>
+            {/*<div>*/}
+            {/*    <User/>*/}
+            {/*</div>*/}
+
+            {/*<div className='usersBox'>{render()}</div>*/}
+            <User/>
         </div>
     );
 

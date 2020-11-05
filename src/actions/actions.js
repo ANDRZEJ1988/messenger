@@ -1,9 +1,9 @@
 import {SEARCH_USER, SELECT_USER, SEND_SMS} from "./action-types";
 
-export const selectUserAction = (user) => {
+export const selectUserAction = (id) => {
     return ({
         type: SELECT_USER,
-        payload: user
+        payload: id
     })
 };
 export const SearchtUserAction = (user) => {

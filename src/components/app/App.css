@@ -39,3 +39,7 @@
 .appl{
   display: flex;
 }
+.components{
+  display: flex;
+  flex-wrap: wrap;
+}
