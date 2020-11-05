@@ -1,0 +1,67 @@
+.chat {
+    width: 70vw;
+    height: 100vh;
+    border-top: solid 1px;
+    border-right: solid 1px;
+    border-bottom: solid 1px;
+    /*background: rgba(230, 230, 230, 0.56);*/
+}
+
+.header {
+    background: rgba(230, 230, 230, 0.56);
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+}
+
+.main {
+    width: 100%;
+    background: rgba(238, 238, 238, 0.47);
+    height: 70vh;
+    border-bottom: solid 1px;
+    border-top: solid 1px;
+}
+
+.footer {
+    width: 100%;
+    background: rgba(230, 230, 230, 0.56);
+    height: 15vh;
+    display: flex;
+    align-items: center;
+}
+
+.message  {
+    display: flex;
+    align-items: center;
+    margin: 15px;
+    /*justify-content: flex-end;*/
+}
+
+.hisSms {
+    color: white;
+    background: rgba(52, 52, 52, 0.91);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    /*width: 60%;*/
+    border-radius: 50px;
+    padding: 0 10px;
+}
+
+.mySms {
+    min-height: 50px;
+    background: rgba(210, 210, 210, 0.65);
+    display: flex;
+    align-items: center;
+    /*width: 60%;*/
+    border-radius: 50px;
+    padding: 0 10px;
+    /*justify-self: flex-end;*/
+}
+.flexEnd{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 15px;
+}
