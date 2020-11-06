@@ -22,12 +22,21 @@ export const lastSmsByIdSelector = createSelector(
     (lastSms, id) => (lastSms.find(sms => sms.userId === id)
     )
 );
-
-
-
-
-
 export const listSelector = state => state.list;
+// export const usersSortSelector = createSelector(
+//     usersSelector,
+//     lastSMSSelector,
+//     (users, lastSms) => (users.map(user=>{
+//         const filterSms=lastSms.filter()
+//         })
+//     )
+// );
+
+
+
+
+
+
 export const chatSelector = createSelector(
     listSelector,
     (list) => (list.sms)

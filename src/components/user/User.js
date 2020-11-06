@@ -1,38 +1,31 @@
 import React from 'react';
 import './User.css';
 import {useDispatch, useSelector} from "react-redux";
-import {lastSMSSelector, smsSelector, usersSelector} from "../../store/selectors";
+import {lastSMSSelector, listSelector} from "../../store/selectors";
 import {selectUserAction} from "../../actions/actions";
 
 export const User = () => {
     const lastSMS = useSelector(lastSMSSelector);
-    const users = useSelector(usersSelector);
-    // console.log(users);
-    const dispatch=useDispatch();
-    const selectUsers=(id)=>{
-        // console.log(id);
+    const list = useSelector(listSelector);
+    const dispatch = useDispatch();
+    const selectUsers = (id) => {
         dispatch(selectUserAction(id));
     };
     const render = () => {
         return (
-            lastSMS.map(sms => {
-                console.log(users);
-                const findUser = users.find(user => {
-                    return (user.userId === sms.userId)
-                });
-                console.log(findUser);
-                // onClick={() => selectUser(valueUser, message.txt)}
-                // console.log(sms);
-                return (
-                    <div className='user' key={sms.userId}  onClick={() => selectUsers(sms.userId)}>
-                        <img src={findUser.photo} alt=""/>
-                        <div className='name'>
-                            <div>{findUser.name}</div>
-                            <p>{sms.text}</p>
+            list.map(user => {
+                    const one = lastSMS.filter(sms => sms.userId === user.userId)
+                    return (
+                        <div className='user' key={user.userId} onClick={() => selectUsers(user.userId)}>
+                            <img src={user.photo} alt=""/>
+                            <div className='name'>
+                                <div>{user.name}</div>
+                                {one.length !== 0 && <p>{one[0].text}</p>}
+                            </div>
                         </div>
-                    </div>
-                );
-            })
+                    )
+                }
+            )
         )
     }
 

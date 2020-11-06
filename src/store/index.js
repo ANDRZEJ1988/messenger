@@ -56,21 +56,21 @@ export const initialState = {
             text: 'consectetur adipisicing elit.',
             date: ''
         },
-        // {
-        //     userId: 1,
-        //     text: 'Cupiditate et quas unde!',
-        //     date: ''
-        // },
-        // {
-        //     userId: 3,
-        //     text: 'Lorem ipsum dolor.',
-        //     date: ''
-        // },
-        // {
-        //     userId: 5,
-        //     text: 'consectetur adipisicing elit.',
-        //     date: ''
-        // },
+        {
+            userId: 4,
+            text: '',
+            date: ''
+        },
+        {
+            userId: 2,
+            text: '',
+            date: ''
+        },
+        {
+            userId: 6,
+            text: '',
+            date: ''
+        },
     ],
     messages: [
         {
@@ -91,11 +91,11 @@ export const initialState = {
         {
             userId: 2,
             txt: [
-                {
-                    text: '',
-                    date: '',
-                    userId: 2
-                }
+                // {
+                //     text: '',
+                //     date: '',
+                //     userId: 2
+                // }
             ]
         },
         {
@@ -140,134 +140,15 @@ export const initialState = {
         }
     ],
     userIdSelected: 1,
+    list:[]
 }
-// export const initialState = {
-//     users: [
-//         {
-//             name: 'Dodo',
-//             id: 1,
-//             photo: Dodo,
-//         },
-//         {
-//             name: 'Tete',
-//             id: 2,
-//             photo: Tete,
-//         },
-//         {
-//             name: 'Ismaili',
-//             id: 3,
-//             photo: Ismaili,
-//         },
-//         {
-//             name: 'Marlos',
-//             id: 4,
-//             photo: Marlos,
-//         },
-//         {
-//             name: 'Solomon',
-//             id: 5,
-//             photo: Solomon,
-//         },
-//         {
-//             name: 'Taison',
-//             id: 6,
-//             photo: Taison,
-//         }
-//     ],
-//     sms: [
-//         {
-//             id: 1,
-//             txt: [
-//                 {
-//                     text: 'Lorem ipsum dolor sit amet.',
-//                     date: '',
-//                     id:1
-//                 },
-//                 {
-//                     text: 'Cupiditate et quas unde!',
-//                     date: '',
-//                     id:0
-//                 }
-//             ]
-//         },
-//         {
-//             id: 2,
-//             txt: [
-//                 {
-//                     text: '',
-//                     date: '',
-//                     id:2
-//                 }
-//             ]
-//         },
-//         {
-//             id: 3,
-//             txt: [
-//                 {
-//                     text: 'Lorem ipsum dolor.',
-//                     date: '',
-//                     id:0
-//                 }
-//             ]
-//         },
-//         {
-//             id: 4,
-//             txt: [
-//                 {
-//                     text: '',
-//                     date: '',
-//                     id:4
-//                 }
-//             ]
-//         },
-//         {
-//             id: 5,
-//             txt: [
-//                 {
-//                     text: 'consectetur adipisicing elit.',
-//                     date: '',
-//                     id:5
-//                 }
-//             ]
-//         },
-//         {
-//             id: 6,
-//             txt: [
-//                 {
-//                     text: '',
-//                     date: '',
-//                     id:6
-//                 }
-//             ]
-//         },
-//
-//     ],
-//     list: {
-//         name: 'Dodo',
-//         photo: Dodo,
-//         id: 1,
-//         sms: [
-//             {
-//                 text: 'Lorem ipsum dolor sit amet.',
-//                 date: '',
-//                 id: 1
-//             },
-//             {
-//                 text: 'Cupiditate et quas unde!',
-//                 date: '',
-//                 id: 0
-//             },
-//
-//         ]
-//     }
-// }
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'SELECT_USER' :
-            return {...state, users: action.payload};
+            return {...state, userIdSelected: action.payload};
         case 'SEARCH_USER':
-            return {...state, users: action.payload};
+            return {...state, list: action.payload};
         case 'SEND_SMS':
             return {...state, messages: action.payload};
             case 'SEND_LAST_SMS':

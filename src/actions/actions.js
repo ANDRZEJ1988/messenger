@@ -6,7 +6,7 @@ export const selectUserAction = (id) => {
         payload: id
     })
 };
-export const SearchtUserAction = (user) => {
+export const SearchUserAction = (user) => {
     return ({
         type: SEARCH_USER,
         payload: user
