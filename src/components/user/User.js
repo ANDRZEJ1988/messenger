@@ -7,17 +7,20 @@ import {selectUserAction} from "../../actions/actions";
 export const User = () => {
     const lastSMS = useSelector(lastSMSSelector);
     const users = useSelector(usersSelector);
+    // console.log(users);
     const dispatch=useDispatch();
     const selectUsers=(id)=>{
-        console.log(id);
+        // console.log(id);
         dispatch(selectUserAction(id));
     };
     const render = () => {
         return (
             lastSMS.map(sms => {
+                console.log(users);
                 const findUser = users.find(user => {
                     return (user.userId === sms.userId)
                 });
+                console.log(findUser);
                 // onClick={() => selectUser(valueUser, message.txt)}
                 // console.log(sms);
                 return (

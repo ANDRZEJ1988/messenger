@@ -24,33 +24,35 @@ export const People = () => {
     };
     const search = (event) => {
         const searchUser = event.target.value;
+        console.log(searchUser);
         const copy = users.slice();
         if (searchUser.length === 0) {
             dispatch(SearchtUserAction(initialUsers));
         } else {
             const result = copy.filter(value => value.name.toLowerCase().includes(searchUser));
+            console.log(result);
             dispatch(SearchtUserAction(result));
         }
     }
 
-    const render = () => {
-        return (
-            users.map(valueUser => {
-                const message = sms.find(valueSMS => {
-                    return valueSMS.id === valueUser.id
-                });
-                return (
-                    <div className='user' key={valueUser.id} onClick={() => selectUser(valueUser, message.txt)}>
-                        <img src={valueUser.photo} alt=""/>
-                        <div className='name'>
-                            <div>{valueUser.name}</div>
-                            <p>{message.txt[message.txt.length - 1].text}</p>
-                        </div>
-                    </div>
-                )
-            })
-        )
-    };
+    // const render = () => {
+    //     return (
+    //         users.map(valueUser => {
+    //             const message = sms.find(valueSMS => {
+    //                 return valueSMS.id === valueUser.id
+    //             });
+    //             return (
+    //                 <div className='user' key={valueUser.id} onClick={() => selectUser(valueUser, message.txt)}>
+    //                     <img src={valueUser.photo} alt=""/>
+    //                     <div className='name'>
+    //                         <div>{valueUser.name}</div>
+    //                         <p>{message.txt[message.txt.length - 1].text}</p>
+    //                     </div>
+    //                 </div>
+    //             )
+    //         })
+    //     )
+    // };
 
     return (
         <div className='people'>

@@ -265,11 +265,13 @@ export const initialState = {
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'SELECT_USER' :
-            return {...state, userIdSelected: action.payload};
+            return {...state, users: action.payload};
         case 'SEARCH_USER':
             return {...state, users: action.payload};
         case 'SEND_SMS':
-            return {...state, list: action.payload};
+            return {...state, messages: action.payload};
+            case 'SEND_LAST_SMS':
+            return {...state, lastSMS: action.payload};
         default:
             return state;
     }

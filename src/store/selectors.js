@@ -16,6 +16,15 @@ export const smsByIdSelector = createSelector(
     (sms, id) => (sms.find(value => value.userId === id)
     )
 );
+export const lastSmsByIdSelector = createSelector(
+    lastSMSSelector,
+    userIdSelectedSelector,
+    (lastSms, id) => (lastSms.find(sms => sms.userId === id)
+    )
+);
+
+
+
 
 
 export const listSelector = state => state.list;
