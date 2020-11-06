@@ -16,6 +16,8 @@
 }
 
 .main {
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
     width: 100%;
     background: rgba(238, 238, 238, 0.47);
     height: 70vh;
@@ -35,6 +37,7 @@
     display: flex;
     align-items: center;
     margin: 15px;
+    flex-wrap: wrap;
     /*justify-content: flex-end;*/
 }
 
@@ -57,6 +60,7 @@
     /*width: 60%;*/
     border-radius: 50px;
     padding: 0 10px;
+
     /*justify-self: flex-end;*/
 }
 .flexEnd{
@@ -64,4 +68,12 @@
     justify-content: flex-end;
     align-items: center;
     margin: 15px;
+    flex-wrap: wrap;
+}
+.date{
+    font-size: 12px;
+}
+.message.flexEnd{
+    display: flex;
+    flex-wrap: wrap;
 }

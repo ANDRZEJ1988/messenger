@@ -21,6 +21,7 @@ export const User = () => {
                             <div className='name'>
                                 <div>{user.name}</div>
                                 {one.length !== 0 && <p>{one[0].text}</p>}
+                                <div className='date'>{one[0].date}</div>
                             </div>
                         </div>
                     )
