@@ -11,7 +11,7 @@ const date1 = new Date(0, 5, 21, 9, 15);
 const date2 = new Date(2019, 5, 23, 21, 0);
 const date3 = new Date(2005, 1, 1, 14, 22);
 const date4 = new Date(2020, 1, 1, 14, 0);
-// localStorage.removeItem('stateMessage');
+
 export const initialState = {
     users: [
         {
@@ -138,11 +138,23 @@ export const initialState = {
                 }
             ]
         },
+        {
+            userId: 4,
+            txt: []
+        },
+        {
+            userId: 5,
+            txt: []
+        },
+        {
+            userId: 6,
+            txt: []
+        },
     ],
     userIdSelected: 1,
 
 };
-
+// localStorage.removeItem('stateMessage');
 const getStore = () => {
     if (localStorage.getItem('stateMessage') !== null) {
         return JSON.parse(localStorage.getItem('stateMessage'))

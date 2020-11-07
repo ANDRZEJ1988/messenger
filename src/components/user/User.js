@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import './User.css';
 import {useDispatch, useSelector} from "react-redux";
 import {
@@ -9,9 +9,11 @@ import {selectUserAction} from "../../actions/actions";
 export const User = () => {
     const dispatch = useDispatch();
     const people = useSelector(peopleSelector);
-    const selectUsers = (id) => {
-        dispatch(selectUserAction(id));
-    };
+    const selectUsers=useCallback((id)=>{dispatch(selectUserAction(id));},[dispatch])
+    // const selectUsers=(id)=>{
+    //     dispatch(selectUserAction(id));
+    // };
+
     const render = () => {
         return (
             people.map(user => {
