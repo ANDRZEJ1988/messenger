@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/ANDRZEJ1988/messenger/static/css/main.ab76b950.chunk.css",
-    "main.js": "/ANDRZEJ1988/messenger/static/js/main.6e9764ed.chunk.js",
-    "main.js.map": "/ANDRZEJ1988/messenger/static/js/main.6e9764ed.chunk.js.map",
-    "runtime-main.js": "/ANDRZEJ1988/messenger/static/js/runtime-main.a5d1def1.js",
-    "runtime-main.js.map": "/ANDRZEJ1988/messenger/static/js/runtime-main.a5d1def1.js.map",
-    "static/js/2.0261e7af.chunk.js": "/ANDRZEJ1988/messenger/static/js/2.0261e7af.chunk.js",
-    "static/js/2.0261e7af.chunk.js.map": "/ANDRZEJ1988/messenger/static/js/2.0261e7af.chunk.js.map",
-    "index.html": "/ANDRZEJ1988/messenger/index.html",
-    "static/css/main.ab76b950.chunk.css.map": "/ANDRZEJ1988/messenger/static/css/main.ab76b950.chunk.css.map",
-    "static/js/2.0261e7af.chunk.js.LICENSE.txt": "/ANDRZEJ1988/messenger/static/js/2.0261e7af.chunk.js.LICENSE.txt",
-    "static/media/dodo.1b600a90.png": "/ANDRZEJ1988/messenger/static/media/dodo.1b600a90.png",
-    "static/media/ismaili.cbd09180.png": "/ANDRZEJ1988/messenger/static/media/ismaili.cbd09180.png",
-    "static/media/marlos.9172a511.png": "/ANDRZEJ1988/messenger/static/media/marlos.9172a511.png",
-    "static/media/solomon.cfadb9e0.png": "/ANDRZEJ1988/messenger/static/media/solomon.cfadb9e0.png",
-    "static/media/taison.fdc13aaf.png": "/ANDRZEJ1988/messenger/static/media/taison.fdc13aaf.png",
-    "static/media/tete.c862f83a.png": "/ANDRZEJ1988/messenger/static/media/tete.c862f83a.png"
+    "main.css": "/ANDRZEJ1988/messenger/tree/userWithSms/static/css/main.ffe9f70b.chunk.css",
+    "main.js": "/ANDRZEJ1988/messenger/tree/userWithSms/static/js/main.255c00ae.chunk.js",
+    "main.js.map": "/ANDRZEJ1988/messenger/tree/userWithSms/static/js/main.255c00ae.chunk.js.map",
+    "runtime-main.js": "/ANDRZEJ1988/messenger/tree/userWithSms/static/js/runtime-main.a95ea606.js",
+    "runtime-main.js.map": "/ANDRZEJ1988/messenger/tree/userWithSms/static/js/runtime-main.a95ea606.js.map",
+    "static/js/2.f42ab8ed.chunk.js": "/ANDRZEJ1988/messenger/tree/userWithSms/static/js/2.f42ab8ed.chunk.js",
+    "static/js/2.f42ab8ed.chunk.js.map": "/ANDRZEJ1988/messenger/tree/userWithSms/static/js/2.f42ab8ed.chunk.js.map",
+    "index.html": "/ANDRZEJ1988/messenger/tree/userWithSms/index.html",
+    "static/css/main.ffe9f70b.chunk.css.map": "/ANDRZEJ1988/messenger/tree/userWithSms/static/css/main.ffe9f70b.chunk.css.map",
+    "static/js/2.f42ab8ed.chunk.js.LICENSE.txt": "/ANDRZEJ1988/messenger/tree/userWithSms/static/js/2.f42ab8ed.chunk.js.LICENSE.txt",
+    "static/media/dodo.1b600a90.png": "/ANDRZEJ1988/messenger/tree/userWithSms/static/media/dodo.1b600a90.png",
+    "static/media/ismaili.cbd09180.png": "/ANDRZEJ1988/messenger/tree/userWithSms/static/media/ismaili.cbd09180.png",
+    "static/media/marlos.9172a511.png": "/ANDRZEJ1988/messenger/tree/userWithSms/static/media/marlos.9172a511.png",
+    "static/media/solomon.cfadb9e0.png": "/ANDRZEJ1988/messenger/tree/userWithSms/static/media/solomon.cfadb9e0.png",
+    "static/media/taison.fdc13aaf.png": "/ANDRZEJ1988/messenger/tree/userWithSms/static/media/taison.fdc13aaf.png",
+    "static/media/tete.c862f83a.png": "/ANDRZEJ1988/messenger/tree/userWithSms/static/media/tete.c862f83a.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.a5d1def1.js",
-    "static/js/2.0261e7af.chunk.js",
-    "static/css/main.ab76b950.chunk.css",
-    "static/js/main.6e9764ed.chunk.js"
+    "static/js/runtime-main.a95ea606.js",
+    "static/js/2.f42ab8ed.chunk.js",
+    "static/css/main.ffe9f70b.chunk.css",
+    "static/js/main.255c00ae.chunk.js"
   ]
 }
