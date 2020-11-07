@@ -3,36 +3,23 @@ import {People} from "../people/People";
 import {Chat} from "../chat/Chat";
 import {User} from "../user/User";
 import {useDispatch, useSelector} from "react-redux";
-import {lastSMSSelector, usersSelector} from "../../store/selectors";
-import {allUserAction, peopleAction, SearchUserAction} from "../../actions/actions";
-
+import {stateSelector} from "../../store/selectors";
+import {useCallback, useEffect} from "react";
+import {stateLocalAction} from "../../actions/actions";
 
 function App() {
-    // const dispatch = useDispatch();
-    // const users = useSelector(usersSelector);
-    // dispatch(SearchUserAction(users));
+    const state = useSelector(stateSelector);
+    const dispatch = useDispatch();
+    const getState = useCallback(() => {
+        const stateJson = JSON.stringify(state);
+        localStorage.setItem('stateMessage', stateJson);
+        const newState = JSON.parse(localStorage.getItem('stateMessage'));
+        dispatch(stateLocalAction(newState));
+    }, [state, dispatch]);
 
-
-
-    // const dispatch = useDispatch();
-    // const users = useSelector(usersSelector);
-    // const lastSms = useSelector(lastSMSSelector);
-    // const copyUsers = users.slice();
-    // const copyLastSms = lastSms.slice();
-    // const result=copyUsers.map(user => {
-    //     const one = copyLastSms.find(sms => sms.userId === user.userId)
-    //     return (
-    //         {
-    //             userId: user.userId,
-    //             name: user.name,
-    //             photo: user.photo,
-    //             text: one.text,
-    //             date: one.date
-    //         })
-    //
-    // });
-    // dispatch(allUserAction(result));
-    // dispatch(peopleAction(result));
+    useEffect(() => {
+        getState();
+    }, [getState]);
 
     return (
         <div className='appl'>

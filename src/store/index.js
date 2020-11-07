@@ -11,7 +11,7 @@ const date1 = new Date(0, 5, 21, 9, 15);
 const date2 = new Date(2019, 5, 23, 21, 0);
 const date3 = new Date(2005, 1, 1, 14, 22);
 const date4 = new Date(2020, 1, 1, 14, 0);
-
+// localStorage.removeItem('stateMessage');
 export const initialState = {
     users: [
         {
@@ -20,24 +20,20 @@ export const initialState = {
             photo: Dodo,
             text: 'Cupiditate et quas unde!',
             date: date1.toLocaleString("en", string),
-            // dateNum: date1.toLocaleString("en", number),
-            // dates:date1
         },
         {
             userId: 2,
             name: 'Tete',
             photo: Tete,
-            text: '',
-            date: '',
-            // dateNum:''
+            text: 'Lorem ipsum dolor.',
+            date: date3.toLocaleString("en", number),
         },
         {
             userId: 3,
             name: 'Ismaili',
             photo: Ismaili,
-            text: 'Lorem ipsum dolor.',
-            date: date3.toLocaleString("en", string),
-            // dateNum: date3.toLocaleString("en", number)
+            text: 'consectetur adipisicing elit.',
+            date: date4.toLocaleString("en", string),
         },
         {
             userId: 4,
@@ -45,15 +41,13 @@ export const initialState = {
             photo: Marlos,
             text: '',
             date: '',
-            // dateNum:''
         },
         {
             userId: 5,
             name: 'Solomon',
             photo: Solomon,
-            text: 'consectetur adipisicing elit.',
-            date: date4.toLocaleString("en", string),
-            // dateNum: date4.toLocaleString("en", number)
+            text: '',
+            date: '',
         },
         {
             userId: 6,
@@ -61,47 +55,53 @@ export const initialState = {
             photo: Taison,
             text: '',
             date: '',
-            // dateNum:''
         }
     ],
-    // lastSMS: [
-    //     {
-    //         userId: 1,
-    //         text: 'Cupiditate et quas unde!',
-    //         date: date2.toLocaleString("en", string),
-    //         dateNum: date2.toLocaleString("en", number),
-    //     },
-    //     {
-    //         userId: 3,
-    //         text: 'Lorem ipsum dolor.',
-    //         date: date3.toLocaleString("en", string),
-    //         dateNum: date3.toLocaleString("en", number)
-    //     },
-    //     {
-    //         userId: 5,
-    //         text: 'consectetur adipisicing elit.',
-    //         date: date4.toLocaleString("en", string),
-    //         dateNum: date4.toLocaleString("en", number)
-    //     },
-    //     {
-    //         userId: 4,
-    //         text: '',
-    //         date: '',
-    //         dateNum:''
-    //     },
-    //     {
-    //         userId: 2,
-    //         text: '',
-    //         date: '',
-    //         dateNum:''
-    //     },
-    //     {
-    //         userId: 6,
-    //         text: '',
-    //         date: '',
-    //         dateNum:''
-    //     },
-    // ],
+    people: [
+        {
+            userId: 1,
+            name: 'Dodo',
+            photo: Dodo,
+            text: 'Cupiditate et quas unde!',
+            date: date1.toLocaleString("en", string),
+        },
+        {
+            userId: 2,
+            name: 'Tete',
+            photo: Tete,
+            text: 'Lorem ipsum dolor.',
+            date: date3.toLocaleString("en", number),
+        },
+        {
+            userId: 3,
+            name: 'Ismaili',
+            photo: Ismaili,
+            text: 'consectetur adipisicing elit.',
+            date: date4.toLocaleString("en", string),
+        },
+        {
+            userId: 4,
+            name: 'Marlos',
+            photo: Marlos,
+            text: '',
+            date: '',
+        },
+        {
+            userId: 5,
+            name: 'Solomon',
+            photo: Solomon,
+            text: '',
+            date: '',
+        },
+        {
+            userId: 6,
+            name: 'Taison',
+            photo: Taison,
+            text: '',
+            date: '',
+        }
+    ],
+
     messages: [
         {
             userId: 1,
@@ -121,16 +121,6 @@ export const initialState = {
         {
             userId: 2,
             txt: [
-                // {
-                //     text: '',
-                //     date: '',
-                //     userId: 2
-                // }
-            ]
-        },
-        {
-            userId: 3,
-            txt: [
                 {
                     text: 'Lorem ipsum dolor.',
                     date: date3.toLocaleString("en", number),
@@ -139,17 +129,7 @@ export const initialState = {
             ]
         },
         {
-            userId: 4,
-            txt: [
-                {
-                    text: '',
-                    date: '',
-                    userId: 4
-                }
-            ]
-        },
-        {
-            userId: 5,
+            userId: 3,
             txt: [
                 {
                     text: 'consectetur adipisicing elit.',
@@ -158,36 +138,33 @@ export const initialState = {
                 }
             ]
         },
-        {
-            userId: 6,
-            txt: [
-                {
-                    text: '',
-                    date: '',
-                    userId: 6
-                }
-            ]
-        }
     ],
-    userIdSelected:1,
-    list: '',
-    people: []
-}
+    userIdSelected: 1,
 
-export const reducer = (state = initialState, action) => {
+};
+
+const getStore = () => {
+    if (localStorage.getItem('stateMessage') !== null) {
+        return JSON.parse(localStorage.getItem('stateMessage'))
+    } else {
+        const stateJson = JSON.stringify(initialState);
+        localStorage.setItem('stateMessage', stateJson);
+        return JSON.parse(localStorage.getItem('stateMessage'))
+    }
+};
+
+export const reducer = (state = getStore(), action) => {
     switch (action.type) {
+        case 'LOCAL_STATE' :
+            return state;
         case 'SELECT_USER' :
             return {...state, userIdSelected: action.payload};
         case 'SEARCH_USER':
             return {...state, users: action.payload};
-        case 'ALL_USER':
-            return {...state, list: action.payload};
         case 'PEOPLE':
             return {...state, people: action.payload};
         case 'SEND_SMS':
             return {...state, messages: action.payload};
-        // case 'SEND_LAST_SMS':
-        //     return {...state, lastSMS: action.payload};
         default:
             return state;
     }

@@ -2,19 +2,15 @@ import React from 'react';
 import './User.css';
 import {useDispatch, useSelector} from "react-redux";
 import {
-    listSortSelector, peopleSelector, userSortSelector, usersSelector,
+    peopleSelector,
 } from "../../store/selectors";
-import {peopleAction, SearchUserAction, selectUserAction} from "../../actions/actions";
+import {selectUserAction} from "../../actions/actions";
 
 export const User = () => {
     const dispatch = useDispatch();
-    const users = useSelector(usersSelector);
-
     const people = useSelector(peopleSelector);
     const selectUsers = (id) => {
         dispatch(selectUserAction(id));
-
-
     };
     const render = () => {
         return (

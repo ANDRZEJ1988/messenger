@@ -1,4 +1,4 @@
-import {ALL_USER, PEOPLE, SEARCH_USER, SELECT_USER, SEND_LAST_SMS, SEND_SMS} from "./action-types";
+import {LOCAL_STATE, PEOPLE, SEARCH_USER, SELECT_USER, SEND_SMS} from "./action-types";
 
 export const selectUserAction = (id) => {
     return ({
@@ -12,12 +12,7 @@ export const SearchUserAction = (user) => {
         payload: user
     })
 };
-export const allUserAction = (user) => {
-    return ({
-        type: ALL_USER,
-        payload: user
-    })
-};
+
 export const peopleAction = (user) => {
     return ({
         type: PEOPLE,
@@ -30,9 +25,10 @@ export const sendSmsAction = (list) => {
         payload: list
     })
 };
-export const sendLastSmsAction = (list) => {
+export const stateLocalAction = (state) => {
     return ({
-        type: SEND_LAST_SMS,
-        payload: list
+        type: LOCAL_STATE,
+        payload: state
     })
 };
+
