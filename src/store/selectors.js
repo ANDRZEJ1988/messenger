@@ -1,6 +1,5 @@
 import {createSelector} from "reselect";
 
-export const lastSMSSelector=state=>state.lastSMS;
 export const usersSelector = state => state.users;
 export const userIdSelectedSelector = state => state.userIdSelected;
 export const userByIdSelector = createSelector(
@@ -9,6 +8,28 @@ export const userByIdSelector = createSelector(
     (users, id) => (users.find(value => value.userId === id)
     )
 );
+
+
+
+
+
+export const userSortSelector = createSelector(
+    usersSelector,
+    (users) => (users.sort((a, b)=>
+        {
+        if (a.dateNum>b.dateNum){return -1}
+        else return 1
+        })
+    )
+    // (users) => (users.sort((a, b)=>
+    //         a.date-b.date)
+    // )
+);
+
+
+export const lastSMSSelector=state=>state.lastSMS;
+
+
 export const smsSelector = state => state.messages;
 export const smsByIdSelector = createSelector(
     smsSelector,
@@ -25,13 +46,7 @@ export const lastSmsByIdSelector = createSelector(
 
 export const listSelector = state => state.list;
 export const peopleSelector = state => state.people;
-export const listSortSelector = createSelector(
-    listSelector,
-    (list) => (list.sort((a, b)=>
-            // console.log(typeof (a.date));
-            a.date>b.date ?  -1 : 1)
-    )
-);
+
 // export const usersSortSelector = createSelector(
 //     usersSelector,
 //     lastSMSSelector,

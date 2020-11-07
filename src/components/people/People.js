@@ -1,54 +1,30 @@
-import React from 'react';
+import React, {useRef, useState} from 'react';
 
 import './People.css';
 import Icon from '../../icons/uncknown.jpg';
 import Search from '../../icons/search.png';
 import {useDispatch, useSelector} from "react-redux";
-import { listSortSelector, peopleSelector} from "../../store/selectors";
-import { SearchUserAction} from "../../actions/actions";
-// import {initialState} from "../../store";
+import {listSelector, usersSelector} from "../../store/selectors";
+import {peopleAction, SearchUserAction} from "../../actions/actions";
+import {User} from "../user/User";
 
 
 export const People = () => {
     const dispatch = useDispatch();
-    const list=useSelector(listSortSelector);
-    const copyList=list.slice();
-    const people=useSelector(peopleSelector);
-    // const users = useSelector(usersSelector);
-    // const lastSms = useSelector(lastSMSSelector);
-    // const copy = users.slice();
-    // const result=copy.map(user => {
-    //     const one = lastSms.find(sms => sms.userId === user.userId)
-    //     return (
-    //         {
-    //             userId: user.userId,
-    //             name: user.name,
-    //             photo: user.photo,
-    //             text: one.text,
-    //             date: one.date
-    //         })
-    //     // return result
-    //
-    // });
-    // dispatch(SearchUserAction(result));
-
-
-
-
-
-
-
-
+    const users = useSelector(usersSelector);
+    const valueForInput=useSelector(listSelector);
+    dispatch(peopleAction(users));
+    const copyUsers = users.slice();
+    const [list] = useState(copyUsers);
     const search = (event) => {
         const searchUser = event.target.value;
-        // const copy = list.slice();
         if (searchUser.length === 0) {
-            dispatch(SearchUserAction(people));
-            // dispatch(SearchUserAction(copyList));
+            dispatch(peopleAction(list));
         } else {
-            const result = copyList.filter(value => value.name.toLowerCase().includes(searchUser));
+            const result = copyUsers.filter(value => value.name.toLowerCase().includes(searchUser));
             dispatch(SearchUserAction(result));
         }
+
     };
 
     return (
@@ -57,10 +33,10 @@ export const People = () => {
                 <img className='icon' src={Icon} alt=""/>
                 <img src={Search} alt=""/>
                 <input type="text" className='serchContact' placeholder='Search or start new chat'
-                       onInput={search}/>
+                       onInput={search} />
             </div>
             <div className='chats'>Chats</div>
-            {/*<User/>*/}
+            {/*<User  state={}/>*/}
         </div>
     );
 
