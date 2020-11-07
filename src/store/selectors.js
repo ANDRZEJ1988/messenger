@@ -22,7 +22,16 @@ export const lastSmsByIdSelector = createSelector(
     (lastSms, id) => (lastSms.find(sms => sms.userId === id)
     )
 );
+
 export const listSelector = state => state.list;
+export const peopleSelector = state => state.people;
+export const listSortSelector = createSelector(
+    listSelector,
+    (list) => (list.sort((a, b)=>
+            // console.log(typeof (a.date));
+            a.date>b.date ?  -1 : 1)
+    )
+);
 // export const usersSortSelector = createSelector(
 //     usersSelector,
 //     lastSMSSelector,

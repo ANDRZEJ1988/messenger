@@ -4,22 +4,49 @@ import './People.css';
 import Icon from '../../icons/uncknown.jpg';
 import Search from '../../icons/search.png';
 import {useDispatch, useSelector} from "react-redux";
-import {usersSelector} from "../../store/selectors";
-import {SearchUserAction} from "../../actions/actions";
-import {initialState} from "../../store";
-import {User} from "../user/User";
+import { listSortSelector, peopleSelector} from "../../store/selectors";
+import { SearchUserAction} from "../../actions/actions";
+// import {initialState} from "../../store";
+
 
 export const People = () => {
     const dispatch = useDispatch();
-    const users = useSelector(usersSelector);
-    dispatch(SearchUserAction(users));
+    const list=useSelector(listSortSelector);
+    const copyList=list.slice();
+    const people=useSelector(peopleSelector);
+    // const users = useSelector(usersSelector);
+    // const lastSms = useSelector(lastSMSSelector);
+    // const copy = users.slice();
+    // const result=copy.map(user => {
+    //     const one = lastSms.find(sms => sms.userId === user.userId)
+    //     return (
+    //         {
+    //             userId: user.userId,
+    //             name: user.name,
+    //             photo: user.photo,
+    //             text: one.text,
+    //             date: one.date
+    //         })
+    //     // return result
+    //
+    // });
+    // dispatch(SearchUserAction(result));
+
+
+
+
+
+
+
+
     const search = (event) => {
         const searchUser = event.target.value;
-        const copy = users.slice();
+        // const copy = list.slice();
         if (searchUser.length === 0) {
-            dispatch(SearchUserAction(initialState.users));
+            dispatch(SearchUserAction(people));
+            // dispatch(SearchUserAction(copyList));
         } else {
-            const result = copy.filter(value => value.name.toLowerCase().includes(searchUser));
+            const result = copyList.filter(value => value.name.toLowerCase().includes(searchUser));
             dispatch(SearchUserAction(result));
         }
     };
@@ -33,7 +60,7 @@ export const People = () => {
                        onInput={search}/>
             </div>
             <div className='chats'>Chats</div>
-            <User/>
+            {/*<User/>*/}
         </div>
     );
 

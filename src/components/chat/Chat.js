@@ -27,16 +27,18 @@ export const Chat = () => {
     const send = () => {
         const sms = inputRef.current.value;
         const date=new Date();
-        // console.log(date);
+
         copySmsById.txt.push({
             text: sms,
             date: date.toLocaleString("en", number),
+            // date: date,
             userId: 0
         });
         const resultForAllSms = [...anotherSms, copySmsById];
         dispatch(sendSmsAction(resultForAllSms));
         copyLastSmsById.text = sms;
         copyLastSmsById.date = date.toLocaleString("en", string);
+        // copyLastSmsById.date = date;
         const resultForLastSms=[...anotherLastSms,copyLastSmsById];
         dispatch(sendLastSmsAction(resultForLastSms));
         inputRef.current.value = '';
