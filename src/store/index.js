@@ -154,7 +154,7 @@ export const initialState = {
     userIdSelected: 1,
 
 };
-localStorage.removeItem('stateMessage');
+// localStorage.removeItem('stateMessage');
 const getStore = () => {
     if (localStorage.getItem('stateMessage') !== null) {
         return JSON.parse(localStorage.getItem('stateMessage'))
