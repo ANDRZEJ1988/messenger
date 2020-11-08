@@ -1,0 +1,59 @@
+$boxSizing: border-box;
+$fullPx: 100px;
+$fullPers:100%;
+$height:100vh;
+$overflow: auto;
+$display: flex;
+$backgroundChat: rgba(238, 238, 238, 0.47);
+$backgroundHeader: rgba(230, 230, 230, 0.56);
+$backgroundSms: rgba(52, 52, 52, 0.91);
+$backgroundMySms: rgba(210, 210, 210, 0.65);
+$mediumturquoise: mediumturquoise;
+$white:white;
+$position: absolute;
+$align-self: center;
+$outline: none;
+$border-bottom: solid 1px;
+$space-between: space-between;
+$hidden: hidden;
+$flex-end: flex-end;;
+$wrap: wrap;
+$paddingSms: 0 10px;
+%borderMargin{
+  border-radius: 50px;
+  margin: 15px;
+};
+%sms{
+  border-radius: 50px;
+  min-height: 50px;
+  align-items: center;
+  box-sizing: border-box;
+};
+%widthHeight{
+  height: 15px;
+  width: 15px;
+};
+@mixin sizingHeightOverflow($arg1, $arg2, $arg3){
+  box-sizing: $arg1;
+  height: $arg2;
+  overflow: $arg3;
+};
+@mixin flex($arg1, $arg2, $arg3){
+  display: $arg1;
+  align-items: $arg2;
+  justify-content: $arg3;
+};
+@mixin backDisplayPadding($arg1, $arg2, $arg3){
+  background: $arg1;
+  display: $arg2;
+  padding: $arg3;
+};
+@mixin widthHeightPositionBorder($arg1, $arg2, $arg3,$arg4 ){
+  width: $arg1;
+  height:$arg2;
+  position: $arg3;
+  border-radius: $arg4;
+};
+
+
+

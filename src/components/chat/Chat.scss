@@ -1,110 +1,87 @@
+@import "src/scss/variables";
+
 .chat {
-  width: 60%;
-  border-bottom: solid 1px;
-  background: rgba(230, 230, 230, 0.56);
+  width: $fullPers*0.6;
+  border-bottom: $border-bottom;
+  background: $backgroundHeader;
 }
 
 .photo {
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
+  @include widthHeightPositionBorder($fullPx*0.5, $fullPx*0.5, null, $fullPx*0.5);
 }
 
 .header {
-  background: rgba(230, 230, 230, 0.56);
-  height: 12vh;
-  display: flex;
-  align-items: center;
-  padding: 15px;
+  @include backDisplayPadding($backgroundHeader, $display, $fullPx*0.15);
+  height: $height*0.12;
+  align-items: $align-self;
 
   .online {
-    height: 18px;
-    width: 18px;
-    align-self: flex-end;
-    padding-bottom: 10px;
-    padding-left: 40px;
-    position: absolute;
+    @include widthHeightPositionBorder($fullPx*0.18, $fullPx*0.18, $position, null);
+    align-self: $flex-end;
+    padding-bottom: $fullPx*0.1;
+    padding-left: $fullPx*0.4;
   }
 
   h3 {
-    margin-left: 15px;
+    margin-left: $fullPx*0.15;
   }
 }
 
 .main {
-  width: 100%;
-  background: rgba(238, 238, 238, 0.47);
-  height: 70vh;
-  border-bottom: solid 1px;
-  border-top: solid 1px;
-  box-sizing: border-box;
-  overflow: auto;
+  width: $fullPers;
+  background: $backgroundChat;
+  border-bottom: $border-bottom;
+  border-top: $border-bottom;
+  @include sizingHeightOverflow($boxSizing, $height*0.7, $overflow);
 
   .message {
-    display: flex;
-    margin: 15px;
+    display: $display;
+    margin: $fullPx*0.15;
 
     .content {
       .date {
-        font-size: 12px;
-        margin-top: 5px;
+        font-size: $fullPx*0.12;
+        margin-top: $fullPx*0.05;
       }
 
       .hisSms {
-        min-height: 50px;
-        background: rgba(52, 52, 52, 0.91);
-        color: white;
-        border-radius: 50px;
-        display: flex;
-        align-items: center;
-        padding: 0 10px;
-        box-sizing: border-box;
+        @include backDisplayPadding($backgroundSms, $display, $paddingSms);
+        @extend %sms;
+        color: $white;
       }
 
       .mySms {
-        min-height: 50px;
-        background: rgba(210, 210, 210, 0.65);
-        border-radius: 50px;
-        display: flex;
-        align-items: center;
-        padding: 0 10px;
-        box-sizing: border-box;
+        @include backDisplayPadding($backgroundMySms, $display, $paddingSms);
+        @extend %sms;
       }
     }
   }
 }
 
 .flexEnd {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin: 15px;
-  flex-wrap: wrap;
+  @include flex($display, $align-self, $flex-end);
+  margin: $fullPx*0.15;
+  flex-wrap: $wrap;
 }
 
 .footer {
   width: 100%;
-  background: rgba(230, 230, 230, 0.56);
-  margin-top: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background: $backgroundHeader;
+  margin-top: $fullPx*0.25;
+  @include flex($display, $align-self, $align-self);
 
   .inp {
-    width: 90%;
+    width: $fullPers*0.9;
   }
 
   .inpSms {
-    width: 100%;
-    height: 30px;
-    border-radius: 50px;
+    @include widthHeightPositionBorder($fullPers, $fullPx*0.3, null, $fullPx*0.5);
     outline: none;
     padding-left: 15px;
   }
 
   .imgSend {
-    height: 15px;
-    width: 15px;
-    justify-self: flex-end;
+    @extend %widthHeight;
+    justify-self: $flex-end;
   }
 }

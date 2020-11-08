@@ -1,16 +1,15 @@
+@import "src/scss/variables";
+
 .appl {
-  display: flex;
+  display: $display;
 }
 
 .components {
-  height: 100vh;
-  width: 40%;
+  width: $fullPers*0.4;
   border-right: solid 1px;
-  box-sizing: border-box;
+  @include sizingHeightOverflow($boxSizing, $height, null);
 
   .wrapper {
-    height: 70vh;
-    box-sizing: border-box;
-    overflow: auto;
+    @include sizingHeightOverflow($boxSizing, $height*0.7, $overflow);
   }
 }

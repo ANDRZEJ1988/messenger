@@ -1,57 +1,49 @@
+@import "src/scss/variables";
+
 .people {
-  width: 100%;
-  background: rgba(230, 230, 230, 0.56);
-  box-sizing: border-box;
-  overflow: auto;
+  @include sizingHeightOverflow($boxSizing, null, $overflow);
+  background: $backgroundHeader;
+  width: $fullPers;
 
   .info {
-    display: flex;
+    display: $display;
 
     .icon {
-      width: 50px;
-      height: 50px;
-      border-radius: 50px;
-      margin: 15px;
+      @include widthHeightPositionBorder($fullPx*0.5, $fullPx*0.5, null, null);
+      border-radius: $fullPx*0.5;
+      margin: $fullPx*0.15;
     }
 
     .online {
-      height: 18px;
-      width: 18px;
-      position: absolute;
-      margin-top: 50px;
-      margin-left: 50px;
+      @include widthHeightPositionBorder($fullPx*0.18, $fullPx*0.18, $position, null);
+      margin-top: $fullPx*0.5;
+      margin-left: $fullPx*0.5;
     }
   }
 
   .search {
-    width: 100%;
-    display: flex;
+    width: $fullPers;
+    display: $display;
 
     .imgSearch {
-      display: flex;
-      height: 15px;
-      width: 15px;
-      align-self: center;
-      position: absolute;
-      margin-left: 25px
+      display: $display;
+      @include widthHeightPositionBorder($fullPx*0.15, $fullPx*0.15, $position, null);
+      align-self: $align-self;
+      margin-left: $fullPx*0.25;
     }
 
     .searchContact {
-      width: 80%;
-      margin: 15px;
-      height: 30px;
-      border-radius: 50px;
-      outline: none;
-      padding-left: 30px;
-
+      @include widthHeightPositionBorder($fullPers*0.8, $fullPx*0.3, null, null);
+      @extend %borderMargin;
+      outline: $outline;
+      padding-left: $fullPx*0.3;
     }
   }
 
   .chats {
-    height: 5vh;
-    color: mediumturquoise;
-    background: white;
-    font-size: 20px;
-    padding-left: 15px
+    color: $mediumturquoise;
+    background: $white;
+    font-size: $fullPx*0.2;
+    padding-left: $fullPx*0.15;
   }
 }
