@@ -6,7 +6,7 @@
 
 .components {
   width: $fullPers*0.4;
-  border-right: solid 1px;
+  border-right: $border-bottom;
   @include sizingHeightOverflow($boxSizing, $height, null);
 
   .wrapper {

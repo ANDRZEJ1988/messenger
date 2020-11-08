@@ -9,6 +9,7 @@
   .info {
     display: $display;
     margin-right: $fullPx*0.1;
+    position: $relative;
 
     .photo {
       @include widthHeightPositionBorder($fullPx*0.5, $fullPx*0.5, null, $fullPx*0.5);
@@ -16,10 +17,10 @@
 
     .online {
       @extend %widthHeight;
-      align-self: $align-self;
+      left: $fullPx*0.35;
+      top: $fullPx*0.35;
     }
   }
-
 
   .name {
     width: $fullPers;

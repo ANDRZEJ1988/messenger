@@ -19,7 +19,7 @@
     @include widthHeightPositionBorder($fullPx*0.18, $fullPx*0.18, $position, null);
     align-self: $flex-end;
     padding-bottom: $fullPx*0.1;
-    padding-left: $fullPx*0.4;
+    padding-left: $fullPx*0.35;
   }
 
   h3 {
@@ -65,23 +65,20 @@
 }
 
 .footer {
-  width: 100%;
   background: $backgroundHeader;
+  @include flex($display, $align-self, null);
   margin-top: $fullPx*0.25;
-  @include flex($display, $align-self, $align-self);
-
-  .inp {
-    width: $fullPers*0.9;
-  }
+  position: $relative;
 
   .inpSms {
-    @include widthHeightPositionBorder($fullPers, $fullPx*0.3, null, $fullPx*0.5);
-    outline: none;
-    padding-left: 15px;
+    @include widthHeightPositionBorder($fullPers*0.9, $fullPx*0.3, null, $fullPx*0.5);
+    outline: $outline;
+    padding-left: $fullPx*0.15;
+    margin: $margin;
   }
 
   .imgSend {
     @extend %widthHeight;
-    justify-self: $flex-end;
+    left: $fullPers*0.92;
   }
 }

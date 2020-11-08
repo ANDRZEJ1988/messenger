@@ -7,6 +7,7 @@
 
   .info {
     display: $display;
+    position: $relative;
 
     .icon {
       @include widthHeightPositionBorder($fullPx*0.5, $fullPx*0.5, null, null);
@@ -18,7 +19,7 @@
       @include widthHeightPositionBorder($fullPx*0.18, $fullPx*0.18, $position, null);
       margin-top: $fullPx*0.5;
       margin-left: $fullPx*0.5;
-    }
+      }
   }
 
   .search {

@@ -19,6 +19,8 @@ $hidden: hidden;
 $flex-end: flex-end;;
 $wrap: wrap;
 $paddingSms: 0 10px;
+$margin: 0 auto;
+$relative: relative;
 %borderMargin{
   border-radius: 50px;
   margin: 15px;
@@ -32,6 +34,9 @@ $paddingSms: 0 10px;
 %widthHeight{
   height: 15px;
   width: 15px;
+  position: absolute;
+    //left: 35px;
+    //top: 35px;
 };
 @mixin sizingHeightOverflow($arg1, $arg2, $arg3){
   box-sizing: $arg1;
