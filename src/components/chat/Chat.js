@@ -100,12 +100,9 @@ export const Chat = () => {
             </div>
 
             <div className='footer'>
-                {/*<div className='inp'>*/}
-                    <input className='inpSms' type="text" placeholder='Type yor message' ref={inputRef}
-                           onKeyPress={pressEnter}/>
-                    <img className='imgSend' src={Send} alt="" onClick={send}/>
-                {/*</div>*/}
-
+                <input className='inpSms' type="text" placeholder='Type yor message' ref={inputRef}
+                       onKeyPress={pressEnter}/>
+                <img className='imgSend' src={Send} alt="" onClick={send}/>
             </div>
 
         </div>
