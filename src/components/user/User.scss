@@ -1,0 +1,54 @@
+.user {
+  padding: 15px;
+  display: flex;
+  border-bottom: solid 1px;
+  align-items: center;
+
+  .info {
+    display: flex;
+    margin-right: 10px;
+
+    .photo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+    }
+
+    .online {
+      height: 15px;
+      width: 15px;
+      align-self: center;
+    }
+  }
+
+
+  .name {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .nameDate {
+      align-items: center;
+
+      .userName {
+        font-size: 18px;
+      }
+
+      .text {
+        box-sizing: border-box;
+        overflow: hidden;
+        font-size: 14px;
+      }
+    }
+
+    .date {
+      font-size: 14px;
+    }
+  }
+}
+
+
+
+
+
+

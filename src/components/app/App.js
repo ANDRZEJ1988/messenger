@@ -1,4 +1,4 @@
-import './App.css';
+import './App.scss';
 import {People} from "../people/People";
 import {Chat} from "../chat/Chat";
 import {User} from "../user/User";
@@ -25,7 +25,7 @@ function App() {
         <div className='appl'>
             <div className='components'>
                 <People/>
-                <User/>
+                <div className='wrapper'><User/></div>
             </div>
             <Chat/>
         </div>

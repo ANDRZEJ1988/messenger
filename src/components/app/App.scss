@@ -1,0 +1,16 @@
+.appl {
+  display: flex;
+}
+
+.components {
+  height: 100vh;
+  width: 40%;
+  border-right: solid 1px;
+  box-sizing: border-box;
+
+  .wrapper {
+    height: 70vh;
+    box-sizing: border-box;
+    overflow: auto;
+  }
+}

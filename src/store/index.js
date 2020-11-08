@@ -7,10 +7,10 @@ import Marlos from '../photo/marlos.png';
 import Taison from '../photo/taison.png';
 import {number, string} from "../constants/constants";
 
-const date1 = new Date(0, 5, 21, 9, 15);
-const date2 = new Date(2019, 5, 23, 21, 0);
-const date3 = new Date(2005, 1, 1, 14, 22);
-const date4 = new Date(2020, 1, 1, 14, 0);
+const date1 = new Date(2020, 5, 21, 9, 15);
+const date2 = new Date(2020, 5, 23, 21, 0);
+const date3 = new Date(2019, 1, 1, 14, 22);
+const date4 = new Date(2005, 1, 1, 14, 0);
 
 export const initialState = {
     users: [
@@ -26,7 +26,7 @@ export const initialState = {
             name: 'Tete',
             photo: Tete,
             text: 'Lorem ipsum dolor.',
-            date: date3.toLocaleString("en", number),
+            date: date3.toLocaleString("en", string),
         },
         {
             userId: 3,
@@ -70,7 +70,7 @@ export const initialState = {
             name: 'Tete',
             photo: Tete,
             text: 'Lorem ipsum dolor.',
-            date: date3.toLocaleString("en", number),
+            date: date3.toLocaleString("en", string),
         },
         {
             userId: 3,
