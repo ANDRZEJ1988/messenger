@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/messenger/static/css/main.ee4d7250.chunk.css",
-    "main.js": "/messenger/static/js/main.3166872d.chunk.js",
-    "main.js.map": "/messenger/static/js/main.3166872d.chunk.js.map",
+    "main.css": "/messenger/static/css/main.66dc2155.chunk.css",
+    "main.js": "/messenger/static/js/main.b3c0d3b2.chunk.js",
+    "main.js.map": "/messenger/static/js/main.b3c0d3b2.chunk.js.map",
     "runtime-main.js": "/messenger/static/js/runtime-main.56f17b7a.js",
     "runtime-main.js.map": "/messenger/static/js/runtime-main.56f17b7a.js.map",
     "static/js/2.f42ab8ed.chunk.js": "/messenger/static/js/2.f42ab8ed.chunk.js",
     "static/js/2.f42ab8ed.chunk.js.map": "/messenger/static/js/2.f42ab8ed.chunk.js.map",
     "index.html": "/messenger/index.html",
-    "static/css/main.ee4d7250.chunk.css.map": "/messenger/static/css/main.ee4d7250.chunk.css.map",
+    "static/css/main.66dc2155.chunk.css.map": "/messenger/static/css/main.66dc2155.chunk.css.map",
     "static/js/2.f42ab8ed.chunk.js.LICENSE.txt": "/messenger/static/js/2.f42ab8ed.chunk.js.LICENSE.txt",
     "static/media/dodo.1b600a90.png": "/messenger/static/media/dodo.1b600a90.png",
     "static/media/ismaili.cbd09180.png": "/messenger/static/media/ismaili.cbd09180.png",
@@ -21,7 +21,7 @@
   "entrypoints": [
     "static/js/runtime-main.56f17b7a.js",
     "static/js/2.f42ab8ed.chunk.js",
-    "static/css/main.ee4d7250.chunk.css",
-    "static/js/main.3166872d.chunk.js"
+    "static/css/main.66dc2155.chunk.css",
+    "static/js/main.b3c0d3b2.chunk.js"
   ]
 }
